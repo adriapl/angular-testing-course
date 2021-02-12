@@ -1,0 +1,29 @@
+//La clave del testing, está en testear sólo la clase del archivo, si existiesen dependencias con otras instancias, deberían hacerse un FAKE de ellas.
+// Aquí sólo debería fallarnos cosas de la calculadora.
+
+// Pone el test como pendiente.
+    pending();
+
+// Pone el test como fallido.
+    fail();
+
+//Ejecutar test sin 'hot reloading', al ejecutarlos se sale (termina).
+ng test --no-watch
+
+// const logger = new LoggerService();
+
+// Jasmine va a coger la instancia de nuestro 'logger' y va a reemplazar el método 'log' por uno nuevo (el que nos inventemos).
+// La nueva implementación del método 'log' además de llamar a la original, también 'trackeará' cuantas veces se llamará.
+// Eso no sería necesario puesto que ya se hace con el 'createSpyObj'.
+// spyOn(logger, 'log');
+
+// Con esto estaríamos creando un comportamiento para el método 'log' (exactamente lo que hacía, devolver un valor).
+// logger.log.and.returnValue();
+
+// TestBed
+// Nos permite proveer la dependencia a nuestro servicio usando la inyección de dependencia en vez de usar una llamada al explícita al constructor.
+// En el momento que usas TestBet.get(CalculatorService) ya no es necesario usar 'calculator = new CalculatorService(loggerSpy);'
+
+// OJO
+// En el caso de que tuviesemos que hacer un test de integración haciendo una llamada HTTP, no podríamos usar fakeAsync puesto que está hecho para trabajar en síncrono, 
+// deberíamos usar Async.
