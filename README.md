@@ -22,11 +22,7 @@ With the following command the angular-cli will be installed globally in your ma
 
 # How To install this repository
 
-We can install the master branch using the following commands:
-
-    git clone https://github.com/angular-university/angular-testing-course.git
-
-This repository is made of several separate npm modules, that are installable separately. For example, to run the au-input module, we can do the following:
+We can do the following:
 
     cd angular-testing-course
     npm install
